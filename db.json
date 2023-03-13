@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product": "ESP LTD M10",
+      "price": "$199.00"
+    },
+    {
+      "id": 2,
+      "product": "ESP LTD EX-201",
+      "price": "$599.00"
+    },
+    {
+      "id": 3,
+      "product": "ESP LTD Viper-256",
+      "price": "$599.00"
+    },
+    {
+      "id": 4,
+      "product": "ESP LTD EC-401QM",
+      "price": "$999.00"
+    },
+    {
+      "id": 5,
+      "product": "ESP LTD MH-1000NT",
+      "price": "$1,049.00"
+    },
+    {
+      "id": 6,
+      "product": "ESP LTD Deluxe EC-1000",
+      "price": "$1,099.00"
+    },
+    {
+      "id": 7,
+      "product": "ESP KH-V",
+      "price": "$1,799.00"
+    },
+    {
+      "id": 8,
+      "product": "ESP E-II EX NT",
+      "price": "$2,099.00"
+    },
+    {
+      "id": 9,
+      "product": "ESP E-II Horizon NT-II",
+      "price": "$2,499.00"
+    }
+  ]
+}
