@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import ShopItem from "../components/ShopItem";
+import shopStyles from "./Shop.module.scss";
 
 const getData = async () => {
   const response = await fetch("http://localhost:3004/products");
@@ -18,11 +19,18 @@ const Shop = () => {
   return (
     <div>
       <h1>Shop</h1>
-      {data?.map((item) => {
-        return (
-          <ShopItem key={item.id} product={item.product} price={item.price} />
-        );
-      })}
+      <div className={shopStyles.shopItemsContainer}>
+        {data?.map((item) => {
+          return (
+            <ShopItem
+              key={item.id}
+              product={item.product}
+              price={item.price}
+              itemId={item.id}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
