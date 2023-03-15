@@ -1,7 +1,31 @@
 .item {
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jost", sans-serif;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+  width: 200px;
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
+
+.productName {
+  margin-bottom: 1px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.productPrice {
+  margin-top: 1px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  color: #dd7777;
 }
