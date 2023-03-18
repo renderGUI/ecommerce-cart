@@ -3,14 +3,26 @@ import NavigationBar from "./components/NavigationBar";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import { QueryClientProvider, QueryClient } from "react-query";
 import ItemDescription from "./pages/ItemDescription";
+import { ProductContext } from "./contexts/product-context";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const client = new QueryClient();
+  const [products, setProducts] = useState([]);
+
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:3004/products");
+    const data = await response.json();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <QueryClientProvider client={client}>
+      <ProductContext.Provider value={{ products, setProducts }}>
         <BrowserRouter>
           <NavigationBar />
           <Routes>
@@ -20,7 +32,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
-      </QueryClientProvider>
+      </ProductContext.Provider>
     </div>
   );
 };

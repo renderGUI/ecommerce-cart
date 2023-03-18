@@ -1,18 +1,16 @@
-import { useQuery } from "react-query";
+import { useContext } from "react";
+import { ProductContext } from "../contexts/product-context";
 import ShopItem from "../components/ShopItem";
 import shopStyles from "./Shop.module.scss";
 
 const Shop = () => {
-  const { data } = useQuery(["products"], async () => {
-    const response = await fetch("http://localhost:3004/products");
-    const data = await response.json();
-    return data;
-  });
+  const { products } = useContext(ProductContext);
+
   return (
     <div>
       <h1 className={shopStyles.pageHeading}>SHOP</h1>
       <div className={shopStyles.shopItemsContainer}>
-        {data?.map((item) => {
+        {products?.map((item) => {
           return (
             <ShopItem
               key={item.id}
