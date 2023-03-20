@@ -18,7 +18,7 @@ const NavigationBar = () => {
         <Link to="/" className={navigationStyles.navText}>
           HOME
         </Link>
-        <Link to="/shop" className={navigationStyles.navText}>
+        <Link to="/products" className={navigationStyles.navText}>
           SHOP
         </Link>
       </div>

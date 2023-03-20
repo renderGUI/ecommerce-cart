@@ -1,28 +1,28 @@
-import itemStyles from "./ShopItem.module.scss";
+import productStyles from "./Product.module.scss";
 import { Imgs } from "../images/images";
 import { useNavigate } from "react-router-dom";
 
-const ShopItem = (props) => {
+const Product = (props) => {
   const navigate = useNavigate();
   const selectedImage = Imgs.filter((image) => {
     return image.id === props.itemId;
   });
 
-  const viewItemDescription = () => {
+  const viewProductDetails = () => {
     navigate(`${props.itemId}`);
   };
 
   return (
-    <div onClick={viewItemDescription} className={itemStyles.item}>
+    <div onClick={viewProductDetails} className={productStyles.product}>
       <img
         src={selectedImage[0].imgSource}
         alt="guitar product"
         width="150px"
       />
-      <p className={itemStyles.productName}>{props.product}</p>
-      <p className={itemStyles.productPrice}>{props.price}</p>
+      <p className={productStyles.productName}>{props.product}</p>
+      <p className={productStyles.productPrice}>{props.price}</p>
     </div>
   );
 };
 
-export default ShopItem;
+export default Product;
